@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Trip Delete{% endblock %}
+{% block content %}
+    <h1>Delete Trip</h1>
+    <p>Are you sure you want to delete the trip "{{ trip.driver.user.first_name }} {{ trip.driver.user.last_name }} - {{ trip.destination }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+        <a href="{% url 'trip_list' %}">Cancel</a>
+    </form>
+{% endblock %}

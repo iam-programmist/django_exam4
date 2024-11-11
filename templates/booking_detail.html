@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Booking Detail{% endblock %}
+{% block content %}
+    <h1>Booking Details</h1>
+    <p>Trip: {{ booking.trip.driver.user.first_name }} {{ booking.trip.driver.user.last_name }} - {{ booking.trip.destination }}</p>
+    <p>Passenger: {{ booking.passenger.user.first_name }} {{ booking.passenger.user.last_name }}</p>
+    <p>Seats Reserved: {{ booking.seats_reserved }}</p>
+    <a href="{% url 'booking_update' booking.pk %}">Edit</a>
+    <a href="{% url 'booking_delete' booking.pk %}">Delete</a>
+    <a href="{% url 'booking_list' %}">Back to List</a>
+{% endblock %}

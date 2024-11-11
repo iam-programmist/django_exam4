@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Route Delete{% endblock %}
+{% block content %}
+    <h1>Delete Route</h1>
+    <p>Are you sure you want to delete the route from "{{ route.start_point }}" to "{{ route.end_point }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+        <a href="{% url 'route_list' %}">Cancel</a>
+    </form>
+{% endblock %}

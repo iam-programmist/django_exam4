@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Payment Delete{% endblock %}
+{% block content %}
+    <h1>Delete Payment</h1>
+    <p>Are you sure you want to delete the payment of {{ payment.booking.passenger.user.first_name }} {{ payment.booking.passenger.user.last_name }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+        <a href="{% url 'payment_list' %}">Cancel</a>
+    </form>
+{% endblock %}

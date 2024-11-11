@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}City Delete{% endblock %}
+{% block content %}
+    <h1>Delete City</h1>
+    <p>Are you sure you want to delete the city "{{ city.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+        <a href="{% url 'city_list' %}">Cancel</a>
+    </form>
+{% endblock %}

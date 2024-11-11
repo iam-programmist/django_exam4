@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Route Detail{% endblock %}
+{% block content %}
+    <h1>Route Details</h1>
+    <p>Start Point: {{ route.start_point }}</p>
+    <p>End Point: {{ route.end_point }}</p>
+    <p>Distance: {{ route.distance_km }} km</p>
+    <a href="{% url 'route_update' route.pk %}">Edit</a>
+    <a href="{% url 'route_delete' route.pk %}">Delete</a>
+    <a href="{% url 'route_list' %}">Back to List</a>
+{% endblock %}

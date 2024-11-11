@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Trip List{% endblock %}
+{% block content %}
+    <h1>List of Trips</h1>
+    <ul>
+        {% for trip in trips %}
+            <li><a href="{% url 'trip_detail' trip.pk %}">{{ trip.driver.user.first_name }} {{ trip.driver.user.last_name }} - {{ trip.destination }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'trip_create' %}">Add Trip</a>
+{% endblock %}

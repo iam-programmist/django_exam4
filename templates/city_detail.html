@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}City Detail{% endblock %}
+{% block content %}
+    <h1>City: {{ city.name }}</h1>
+    <p>Country: {{ city.country.name }}</p>
+    <a href="{% url 'city_update' city.pk %}">Edit</a>
+    <a href="{% url 'city_delete' city.pk %}">Delete</a>
+    <a href="{% url 'city_list' %}">Back to List</a>
+{% endblock %}

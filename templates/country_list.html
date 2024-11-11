@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Country List{% endblock %}
+{% block content %}
+    <h1>List of Countries</h1>
+    <ul>
+        {% for country in countries %}
+            <li><a href="{% url 'country_detail' country.pk %}">{{ country.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'country_create' %}">Add Country</a>
+{% endblock %}

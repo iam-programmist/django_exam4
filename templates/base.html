@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Transportation System{% endblock  %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'country_list' %}">Countries</a></li>
+                <li><a href="{% url 'city_list' %}">Cities</a></li>
+                <li><a href="{% url 'user_list' %}">Users</a></li>
+                <li><a href="{% url 'trip_list' %}">Trips</a></li>
+                <li><a href="{% url 'booking_list' %}">Bookings</a></li>
+                <li><a href="{% url 'payment_list' %}">Payments</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© Create by alik</p>
+    </footer>
+</body>
+</html>

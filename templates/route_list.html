@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Route List{% endblock %}
+{% block content %}
+    <h1>List of Routes</h1>
+    <ul>
+        {% for route in routes %}
+            <li><a href="{% url 'route_detail' route.pk %}">{{ route.start_point }} to {{ route.end_point }} - Distance: {{ route.distance_km }} km</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'route_create' %}">Add Route</a>
+{% endblock %}

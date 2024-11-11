@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Payment List{% endblock %}
+{% block content %}
+    <h1>List of Payments</h1>
+    <ul>
+        {% for payment in payments %}
+            <li><a href="{% url 'payment_detail' payment.pk %}">{{ payment.booking.passenger.user.first_name }} {{ payment.booking.passenger.user.last_name }} - Amount: {{ payment.amount }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'payment_create' %}">Add Payment</a>
+{% endblock %}

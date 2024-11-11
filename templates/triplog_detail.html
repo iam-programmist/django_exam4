@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Trip Log Detail{% endblock %}
+{% block content %}
+    <h1>Trip Log Details</h1>
+    <p>Trip: {{ trip_log.trip.destination }}</p>
+    <p>Log Message: {{ trip_log.log_message }}</p>
+    <p>Logged at: {{ trip_log.timestamp }}</p>
+    <a href="{% url 'triplog_update' trip_log.pk %}">Edit</a>
+    <a href="{% url 'triplog_delete' trip_log.pk %}">Delete</a>
+    <a href="{% url 'triplog_list' %}">Back to List</a>
+{% endblock %}

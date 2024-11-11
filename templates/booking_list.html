@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Booking List{% endblock %}
+{% block content %}
+    <h1>List of Bookings</h1>
+    <ul>
+        {% for booking in bookings %}
+            <li><a href="{% url 'booking_detail' booking.pk %}">{{ booking.trip.driver.user.first_name }} {{ booking.trip.driver.user.last_name }} - {{ booking.trip.destination }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'booking_create' %}">Add Booking</a>
+{% endblock %}

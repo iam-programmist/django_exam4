@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Driver Rating Detail{% endblock %}
+{% block content %}
+    <h1>Driver Rating</h1>
+    <p>Driver: {{ driver_rating.trip.driver.user.first_name }} {{ driver_rating.trip.driver.user.last_name }}</p>
+    <p>Passenger: {{ driver_rating.passenger.user.first_name }} {{ driver_rating.passenger.user.last_name }}</p>
+    <p>Rating: {{ driver_rating.rating }}</p>
+    <p>Review: {{ driver_rating.review }}</p>
+    <a href="{% url 'driverrating_update' driver_rating.pk %}">Edit</a>
+    <a href="{% url 'driverrating_delete' driver_rating.pk %}">Delete</a>
+    <a href="{% url 'driverrating_list' %}">Back to List</a>
+{% endblock %}

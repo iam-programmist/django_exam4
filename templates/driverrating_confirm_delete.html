@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Driver Rating Delete{% endblock %}
+{% block content %}
+    <h1>Delete Driver Rating</h1>
+    <p>Are you sure you want to delete the rating for driver "{{ driver_rating.trip.driver.user.first_name }} {{ driver_rating.trip.driver.user.last_name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+        <a href="{% url 'driverrating_list' %}">Cancel</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Trip Detail{% endblock %}
+{% block content %}
+    <h1>Trip: {{ trip.driver.user.first_name }} {{ trip.driver.user.last_name }} - {{ trip.destination }}</h1>
+    <p>Start Time: {{ trip.start_time }}</p>
+    <p>Available Seats: {{ trip.available_seats }}</p>
+    <p>Price per Seat: {{ trip.price_per_seat }}</p>
+    <a href="{% url 'trip_update' trip.pk %}">Edit</a>
+    <a href="{% url 'trip_delete' trip.pk %}">Delete</a>
+    <a href="{% url 'trip_list' %}">Back to List</a>
+{% endblock %}

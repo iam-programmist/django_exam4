@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Event Detail{% endblock %}
+{% block content %}
+    <h1>{{ event.title }}</h1>
+    <p>Description: {{ event.description }}</p>
+    <p>Start Time: {{ event.start_time }}</p>
+    <p>End Time: {{ event.end_time }}</p>
+    <p>Location: {{ event.location }}</p>
+    <a href="{% url 'event_update' event.pk %}">Edit</a>
+    <a href="{% url 'event_delete' event.pk %}">Delete</a>
+    <a href="{% url 'event_list' %}">Back to List</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Message List{% endblock %}
+{% block content %}
+    <h1>List of Messages</h1>
+    <ul>
+        {% for message in messages %}
+            <li><a href="{% url 'message_detail' message.pk %}">{{ message.sender.first_name }} {{ message.sender.last_name }} to {{ message.receiver.first_name }} {{ message.receiver.last_name }}: {{ message.content }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'message_create' %}">Send New Message</a>
+{% endblock %}

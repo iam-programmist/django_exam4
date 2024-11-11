@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Trip Log Delete{% endblock %}
+{% block content %}
+    <h1>Delete Trip Log</h1>
+    <p>Are you sure you want to delete the log for the trip to {{ trip_log.trip.destination }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+        <a href="{% url 'triplog_list' %}">Cancel</a>
+    </form>
+{% endblock %}

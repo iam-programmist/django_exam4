@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Passenger List{% endblock %}
+{% block content %}
+    <h1>List of Passengers</h1>
+    <ul>
+        {% for passenger in passengers %}
+            <li><a href="{% url 'passenger_detail' passenger.pk %}">{{ passenger.user.first_name }} {{ passenger.user.last_name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'passenger_create' %}">Add Passenger</a>
+{% endblock %}

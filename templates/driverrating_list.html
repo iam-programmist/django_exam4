@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Driver Rating List{% endblock %}
+{% block content %}
+    <h1>List of Driver Ratings</h1>
+    <ul>
+        {% for rating in driver_ratings %}
+            <li><a href="{% url 'driverrating_detail' rating.pk %}">{{ rating.trip.driver.user.first_name }} {{ rating.trip.driver.user.last_name }} - Rating: {{ rating.rating }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'driverrating_create' %}">Add Driver Rating</a>
+{% endblock %}

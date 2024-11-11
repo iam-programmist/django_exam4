@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Trip Log Form{% endblock %}
+{% block content %}
+    <h1>{% if object %}Edit{% else %}Add{% endif %} Trip Log</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'triplog_list' %}">Back to List</a>
+{% endblock %}

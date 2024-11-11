@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Message Detail{% endblock %}
+{% block content %}
+    <h1>Message Details</h1>
+    <p>Sender: {{ message.sender.first_name }} {{ message.sender.last_name }}</p>
+    <p>Receiver: {{ message.receiver.first_name }} {{ message.receiver.last_name }}</p>
+    <p>Message: {{ message.content }}</p>
+    <p>Sent at: {{ message.timestamp }}</p>
+    <a href="{% url 'message_update' message.pk %}">Edit</a>
+    <a href="{% url 'message_delete' message.pk %}">Delete</a>
+    <a href="{% url 'message_list' %}">Back to List</a>
+{% endblock %}
